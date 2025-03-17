@@ -1,0 +1,37 @@
+<div class="container">
+  <form [formGroup]="transferForm" (ngSubmit)="handleSubmitAddCategory()">
+    <div class="card">
+
+      <h1>Agendamento de Transferência Bancária</h1>
+
+      <div class="account-bank">
+        <div class="account-origin">
+          <h3 class="title-account">Conta de origem</h3>
+          <input pInputText placeholder="Agência" formControlName="agencyOrigin" />
+          <input pInputText placeholder="Número da Conta" formControlName="accountNumberOrigin" />
+          <input pInputText placeholder="Dígito" formControlName="digitOrigin" />
+          <input pInputText placeholder="Número do Banco" formControlName="bankNumberOrigin" />
+        </div>
+
+        <div class="account-destination">
+          <h3 class="title-account">Conta de Destino</h3>
+          <input pInputText placeholder="Agência" formControlName="agencyDestination" />
+          <input pInputText placeholder="Número da Conta" formControlName="accountNumberDestination" />
+          <input pInputText placeholder="Dígito" formControlName="digitDestination" />
+          <input pInputText placeholder="Número do Banco" formControlName="bankNumberDestination" />
+        </div>
+      </div>
+
+      <br>
+      <input pInputText placeholder="Valor da Transferência" formControlName="valueTransfer" type="number" />
+
+      <p-calendar formControlName="transferDateTime" [showTime]="true" hourFormat="24"
+        placeholder="Data e Hora da Transferência"></p-calendar>
+
+      <div class="flex-center">
+        <p-button [disabled]="transferForm.invalid" type="submit" label="Concluir"></p-button>
+      </div>
+
+    </div>
+  </form>
+</div>
