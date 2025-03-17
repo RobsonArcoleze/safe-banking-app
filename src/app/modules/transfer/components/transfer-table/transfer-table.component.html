@@ -1,0 +1,152 @@
+<div class="grid">
+  <div class="col-12">
+    <p-card
+      styleClass="shadow-3 m-5 text-indigo-800"
+      header="Transferências Agendadas"
+    >
+      <p-table
+        #productsTable
+        [value]="transfers"
+        [rows]="10"
+        [paginator]="true"
+        [responsive]="true"
+        [globalFilterFields]="['dateScheduleFormated', 'dateTransferFormated']"
+        [tableStyle]="{'min-width': '75rem'}"
+        [rowHover]="true"
+        [showCurrentPageReport]="true"
+        dataKey="id"
+        currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} transfêrencias"
+      >
+        <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="dateScheduleFormated">
+              <div class="flex justify-content-between align-itens-center">
+                <div class="flex justify-content-between align-itens-center">
+                  Data de Agendamento
+                </div>
+                <div class="flex justify-content-between align-itens-center">
+                  <p-sortIcon field="dateScheduleFormated"></p-sortIcon>
+                  <p-columnFilter
+                    type="text"
+                    field="dateScheduleFormated"
+                    display="menu"
+                    matchMode="contains"
+                    [showMatchModes]="false"
+                    [showOperator]="false"
+                    [showAddButton]="false"
+                  ></p-columnFilter>
+                </div>
+              </div>
+            </th>
+            <th pSortableColumn="dateTransferFormated">
+              <div class="flex justify-content-between align-itens-center">
+                <div class="flex justify-content-between align-itens-center">
+                  Data de Transferência
+                </div>
+                <div class="flex justify-content-between align-itens-center">
+                  <p-sortIcon field="dateTransferFormated"></p-sortIcon>
+                  <p-columnFilter
+                    type="text"
+                    field="dateTransferFormated"
+                    display="menu"
+                    matchMode="contains"
+                    [showMatchModes]="false"
+                    [showOperator]="false"
+                    [showAddButton]="false"
+                  ></p-columnFilter>
+                </div>
+              </div>
+            </th>
+            <th pSortableColumn="accountOrigin.number">
+              <div class="flex justify-content-between align-itens-center">
+                <div class="flex justify-content-between align-itens-center">
+                  Conta de Origem
+                </div>
+                <div class="flex justify-content-between align-itens-center">
+                  <p-sortIcon field="accountOrigin.number"></p-sortIcon>
+                  <p-columnFilter
+                    type="text"
+                    field="accountOrigin.number"
+                    display="menu"
+                    matchMode="contains"
+                    [showMatchModes]="false"
+                    [showOperator]="false"
+                    [showAddButton]="false"
+                  ></p-columnFilter>
+                </div>
+              </div>
+            </th>
+            <th pSortableColumn="accountDestination.number">
+              <div class="flex justify-content-between align-itens-center">
+                <div class="flex justify-content-between align-itens-center">
+                  Conta de Destino
+                </div>
+                <div class="flex justify-content-between align-itens-center">
+                  <p-sortIcon field="accountDestination.number"></p-sortIcon>
+                  <p-columnFilter
+                    type="text"
+                    field="accountDestination.number"
+                    display="menu"
+                    matchMode="contains"
+                    [showMatchModes]="false"
+                    [showOperator]="false"
+                    [showAddButton]="false"
+                  ></p-columnFilter>
+                </div>
+              </div>
+            </th>
+            <th pSortableColumn="transferValueFormatted">
+              <div class="flex justify-content-between align-itens-center">
+                <div class="flex justify-content-between align-itens-center">
+                  Valor R$
+                </div>
+                <div class="flex justify-content-between align-itens-center">
+                  <p-sortIcon field="transferValueFormatted"></p-sortIcon>
+                  <p-columnFilter
+                    type="text"
+                    field="transferValueFormatted"
+                    display="menu"
+                    matchMode="contains"
+                    [showMatchModes]="false"
+                    [showOperator]="false"
+                    [showAddButton]="false"
+                  ></p-columnFilter>
+                </div>
+              </div>
+            </th>
+            <th pSortableColumn="rateFormated">
+              <div class="flex justify-content-between align-itens-center">
+                <div class="flex justify-content-between align-itens-center">
+                  Taxa R$
+                </div>
+                <div class="flex justify-content-between align-itens-center">
+                  <p-sortIcon field="rateFormated"></p-sortIcon>
+                  <p-columnFilter
+                    type="text"
+                    field="rateFormated"
+                    display="menu"
+                    matchMode="contains"
+                    [showMatchModes]="false"
+                    [showOperator]="false"
+                    [showAddButton]="false"
+                  ></p-columnFilter>
+                </div>
+              </div>
+            </th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-transfer>
+          <tr>
+            <td>{{ transfer?.dateScheduleFormated }}</td>
+            <td>{{ transfer?.dateTransferFormated }}</td>
+            <td>{{ transfer?.accountOrigin.number }}</td>
+            <td>{{ transfer?.accountDestination.number }}</td>
+            <td>{{ transfer?.transferValueFormatted }}</td>
+            <td>{{ transfer?.rateFormated }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+</div>
