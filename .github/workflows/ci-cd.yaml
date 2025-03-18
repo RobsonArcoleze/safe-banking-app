@@ -28,7 +28,7 @@ jobs:
 
       - name: Build Angular app
         run: |
-          npm run build -- --prod
+          npm run build --prod
 
       - name: "Entrando no Dockerhub"
         uses: docker/login-action@v3
