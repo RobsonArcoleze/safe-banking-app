@@ -2,6 +2,7 @@
 # safe-banking-app
 Safe Banking é um projeto desenvolvido usando Angular 16 e node 18. Consiste em aplicação de agendamento de transferência bancária e taxação de acordo com a data informada pelo cliente.
 
+- **YOUTUBE** - Video explicativo: [Safe-Bank](https://youtu.be/TRtNo_0U-K4)
 - OBS: Este projeto roda juntamento com uma aplicação em Java com Spring neste [LINK](https://github.com/RobsonArcoleze/safe-banking-api)
 
 ## Arquitetura
